@@ -1,6 +1,11 @@
 # SkillGraph - Skill & Job Matching Platform
 
 SkillGraph is a full-stack web application that helps students understand how their current skills match with job requirements.
+## Live Demo
+
+🚀 **Live Application:** https://skillgraph-frontend-scx4.onrender.com
+
+The application is deployed on Render and connected to a Node.js/Express backend with CognoDB as the graph database.
 
 The application connects a React frontend with a Node.js and Express backend and uses CognoDB as a graph database to store relationships between students, skills, jobs, and companies.
 
