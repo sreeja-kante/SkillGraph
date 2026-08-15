@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
+const API_URL = "https://skillgraph-y5uy.onrender.com";
+
 function App() {
   const [student, setStudent] = useState(null);
   const [recommendations, setRecommendations] = useState([]);
@@ -11,10 +13,7 @@ function App() {
     const loadData = async () => {
       try {
         // Check backend connection
-        const connectionResponse = await fetch(
-          "http://localhost:5000/"
-        );
-
+        const connectionResponse = await fetch(`${API_URL}/`);
         const connectionData = await connectionResponse.json();
 
         if (connectionData.success !== true) {
@@ -26,7 +25,7 @@ function App() {
 
         // Get student
         const studentResponse = await fetch(
-          "http://localhost:5000/api/students"
+          `${API_URL}/api/students`
         );
 
         if (!studentResponse.ok) {
@@ -41,7 +40,7 @@ function App() {
 
         // Get recommendations
         const recommendationResponse = await fetch(
-          "http://localhost:5000/api/recommendations"
+          `${API_URL}/api/recommendations`
         );
 
         if (!recommendationResponse.ok) {
@@ -88,13 +87,10 @@ function App() {
 
         <p>
           We couldn't connect to the SkillGraph backend.
-          Please make sure the backend server is running on
-          port 5000.
+          Please try again in a few seconds.
         </p>
 
-        <button
-          onClick={() => window.location.reload()}
-        >
+        <button onClick={() => window.location.reload()}>
           Retry Connection
         </button>
       </div>
@@ -106,63 +102,42 @@ function App() {
   const userSkills = student?.skills || [];
   const requiredSkills = job?.requiredSkills || [];
   const matchedSkills = job?.matchedSkills || [];
-
-  // Use missing skills directly from backend
   const missingSkills = job?.missingSkills || [];
-
   const matchPercentage = job?.matchPercentage || 0;
 
   return (
     <div className="app">
 
-      {/* =====================================================
-          HEADER
-      ===================================================== */}
-
+      {/* HEADER */}
       <header className="main-header">
 
         <div className="brand">
 
           <div className="brand-logo">
-
             <span className="logo-dot dot-1"></span>
             <span className="logo-dot dot-2"></span>
             <span className="logo-dot dot-3"></span>
 
             <span className="logo-line line-1"></span>
             <span className="logo-line line-2"></span>
-
           </div>
 
           <div className="brand-text">
-
             <h1>SkillGraph</h1>
-
-            <p>
-              Skill &amp; Job Matching Platform
-            </p>
-
+            <p>Skill &amp; Job Matching Platform</p>
           </div>
 
         </div>
 
         <div className="connection-status">
-
           <span className="connection-dot"></span>
 
-          {connected
-            ? "Connected"
-            : "Disconnected"}
-
+          {connected ? "Connected" : "Disconnected"}
         </div>
 
       </header>
 
-
-      {/* =====================================================
-          PROFILE + CAREER GOAL
-      ===================================================== */}
-
+      {/* PROFILE */}
       <section className="profile-card">
 
         <div className="profile-left">
@@ -184,7 +159,6 @@ function App() {
           </div>
 
         </div>
-
 
         <div className="career-goal">
 
@@ -208,18 +182,10 @@ function App() {
 
       </section>
 
-
-      {/* =====================================================
-          DASHBOARD
-      ===================================================== */}
-
+      {/* DASHBOARD */}
       <main className="dashboard-grid">
 
-
-        {/* =================================================
-            LEFT CARD - MY SKILLS
-        ================================================= */}
-
+        {/* LEFT CARD - MY SKILLS */}
         <section className="dashboard-card skills-card">
 
           <div className="dashboard-card-header">
@@ -246,9 +212,6 @@ function App() {
 
           </div>
 
-
-          {/* Skill Cards */}
-
           <div className="skill-cards">
 
             {userSkills.length > 0 ? (
@@ -257,21 +220,13 @@ function App() {
 
                 let icon = "💻";
 
-                if (
-                  skill.toLowerCase() === "python"
-                ) {
+                if (skill.toLowerCase() === "python") {
                   icon = "🐍";
-                } else if (
-                  skill.toLowerCase() === "sql"
-                ) {
+                } else if (skill.toLowerCase() === "sql") {
                   icon = "🗄️";
-                } else if (
-                  skill.toLowerCase() === "excel"
-                ) {
+                } else if (skill.toLowerCase() === "excel") {
                   icon = "📊";
-                } else if (
-                  skill.toLowerCase() === "power bi"
-                ) {
+                } else if (skill.toLowerCase() === "power bi") {
                   icon = "📊";
                 }
 
@@ -311,9 +266,7 @@ function App() {
 
           </div>
 
-
           {/* Skill Strength */}
-
           <div className="skill-strength">
 
             <h3>
@@ -337,9 +290,7 @@ function App() {
 
           </div>
 
-
           {/* Skill Areas */}
-
           <div className="skill-areas">
 
             <h3>
@@ -348,21 +299,10 @@ function App() {
 
             <div className="area-list">
 
-              <span>
-                Data Analysis
-              </span>
-
-              <span>
-                Databases
-              </span>
-
-              <span>
-                Excel
-              </span>
-
-              <span>
-                Python
-              </span>
+              <span>Data Analysis</span>
+              <span>Databases</span>
+              <span>Excel</span>
+              <span>Python</span>
 
             </div>
 
@@ -370,11 +310,7 @@ function App() {
 
         </section>
 
-
-        {/* =================================================
-            RIGHT CARD - JOB RECOMMENDATION
-        ================================================= */}
-
+        {/* RIGHT CARD - JOB RECOMMENDATION */}
         <section className="dashboard-card recommendation-card">
 
           <div className="dashboard-card-header">
@@ -396,24 +332,18 @@ function App() {
             </div>
 
             {job && (
-
               <div className="match-header-badge">
-
                 {matchPercentage}% Match
-
               </div>
-
             )}
 
           </div>
-
 
           {job ? (
 
             <>
 
               {/* Job Highlight */}
-
               <div className="job-highlight">
 
                 <div className="job-icon">
@@ -433,16 +363,12 @@ function App() {
                 </div>
 
                 <div className="job-match">
-
                   {matchPercentage}% Match
-
                 </div>
 
               </div>
 
-
               {/* Required Skills */}
-
               <div className="required-section">
 
                 <h3>
@@ -451,43 +377,32 @@ function App() {
 
                 <div className="required-skills">
 
-                  {requiredSkills.map(
-                    (skill, index) => {
+                  {requiredSkills.map((skill, index) => {
 
-                      const isMatched =
-                        matchedSkills.includes(skill);
+                    const isMatched =
+                      matchedSkills.includes(skill);
 
-                      return (
+                    return (
+                      <span
+                        key={index}
+                        className={
+                          isMatched
+                            ? "required-skill matched"
+                            : "required-skill missing"
+                        }
+                      >
+                        {isMatched ? "✓" : "⚠"}{" "}
+                        {skill}
+                      </span>
+                    );
 
-                        <span
-                          key={index}
-                          className={
-                            isMatched
-                              ? "required-skill matched"
-                              : "required-skill missing"
-                          }
-                        >
-
-                          {isMatched
-                            ? "✓"
-                            : "⚠"}{" "}
-
-                          {skill}
-
-                        </span>
-
-                      );
-
-                    }
-                  )}
+                  })}
 
                 </div>
 
               </div>
 
-
               {/* Match Statistics */}
-
               <div className="match-stats">
 
                 <div className="match-stat matched-stat">
@@ -499,11 +414,8 @@ function App() {
                   <div className="stat-content">
 
                     <strong>
-
                       {matchedSkills.length} /{" "}
-
                       {requiredSkills.length}
-
                     </strong>
 
                     <span>
@@ -513,7 +425,6 @@ function App() {
                   </div>
 
                 </div>
-
 
                 <div className="match-stat missing-stat">
 
@@ -537,9 +448,7 @@ function App() {
 
               </div>
 
-
               {/* Skill Gap Recommendation */}
-
               {missingSkills.length > 0 && (
 
                 <div className="recommendation-box">
@@ -555,13 +464,9 @@ function App() {
                     </strong>
 
                     <p>
-
                       Learn{" "}
-
                       {missingSkills.join(", ")}{" "}
-
                       to improve your job match.
-
                     </p>
 
                   </div>
@@ -579,9 +484,7 @@ function App() {
           ) : (
 
             <div className="no-data">
-
               No job recommendations available.
-
             </div>
 
           )}
