@@ -72,19 +72,23 @@ SkillGraph solves this problem by connecting students, skills, jobs, and compani
 ---
 
 
+## Screenshots
+
 ### SkillGraph Dashboard
 
-![SkillGraph Dashboard](C:\Sreeja\Assignment\SkillGraph\screenshots\DashboardH.png)
-![alt text](C:\Sreeja\Assignment\SkillGraph\screenshots\dashboardd.png)
-### Students API
+![SkillGraph Dashboard](screenshots/DashboardH.png)
 
-![Students API](C:\Sreeja\Assignment\SkillGraph\screenshots\students.png)
-### Job Recommendations API
+### Job Recommendations
 
-![Job Recommendations API](C:\Sreeja\Assignment\SkillGraph\screenshots\Recommendations.png)
-### CognoDB Graph
+![Job Recommendations](screenshots/Recommendations.png)
 
-![CognoDB Graph](C:\Sreeja\Assignment\SkillGraph\screenshots\database.png)
+### Student Data
+
+![Student API](screenshots/students.png)
+
+### CognoDB Graph Database
+
+![CognoDB Database](screenshots/database.png)
 
 
 ## System Architecture
