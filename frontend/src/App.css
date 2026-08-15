@@ -1,0 +1,1233 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f7fc;
+  color: #07194a;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.main-header {
+  min-height: 125px;
+
+  background: linear-gradient(
+    135deg,
+    #12358d,
+    #1d3f91
+  );
+
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 55px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand-logo {
+  width: 65px;
+  height: 65px;
+
+  position: relative;
+  flex-shrink: 0;
+}
+
+.logo-dot {
+  position: absolute;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: #0ca8ef;
+}
+
+.dot-1 {
+  top: 5px;
+  left: 25px;
+}
+
+.dot-2 {
+  bottom: 5px;
+  left: 5px;
+}
+
+.dot-3 {
+  bottom: 5px;
+  right: 2px;
+
+  background: #6555df;
+}
+
+.logo-line {
+  position: absolute;
+
+  height: 4px;
+
+  background: #0ca8ef;
+
+  transform-origin: left center;
+}
+
+.line-1 {
+  width: 35px;
+
+  top: 27px;
+  left: 18px;
+
+  transform: rotate(145deg);
+}
+
+.line-2 {
+  width: 30px;
+
+  top: 25px;
+  left: 39px;
+
+  transform: rotate(35deg);
+}
+
+.brand-text h1 {
+  margin: 0;
+
+  font-size: 42px;
+
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+.brand-text p {
+  margin: 8px 0 0;
+
+  font-size: 20px;
+}
+
+.connection-status {
+  background: rgba(0, 0, 0, 0.18);
+
+  padding: 16px 30px;
+
+  border-radius: 35px;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.connection-dot {
+  width: 14px;
+  height: 14px;
+
+  background: #20df8a;
+
+  border-radius: 50%;
+}
+
+
+/* =====================================================
+   PROFILE
+===================================================== */
+
+.profile-card {
+  margin: 32px;
+
+  padding: 28px 48px;
+
+  min-height: 145px;
+
+  background: white;
+
+  border-radius: 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow:
+    0 10px 30px rgba(20, 45, 90, 0.08);
+}
+
+.profile-left {
+  display: flex;
+  align-items: center;
+
+  gap: 30px;
+}
+
+.profile-avatar {
+  width: 95px;
+  height: 95px;
+
+  border-radius: 50%;
+
+  background: #1264df;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 48px;
+}
+
+.profile-info h2 {
+  margin: 0;
+
+  font-size: 30px;
+}
+
+.profile-info p {
+  margin: 8px 0 0;
+
+  font-size: 20px;
+
+  color: #617096;
+}
+
+.career-goal {
+  min-width: 520px;
+
+  background: #edf4ff;
+
+  padding: 20px 32px;
+
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+}
+
+.goal-icon {
+  font-size: 38px;
+
+  flex-shrink: 0;
+}
+
+.career-goal span {
+  display: block;
+
+  font-size: 18px;
+
+  margin-bottom: 6px;
+}
+
+.career-goal strong {
+  display: block;
+
+  font-size: 23px;
+
+  color: #08388d;
+}
+
+
+/* =====================================================
+   DASHBOARD GRID
+===================================================== */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 32px;
+
+  margin: 0 32px 40px;
+
+  align-items: stretch;
+}
+
+
+/* =====================================================
+   COMMON CARD
+===================================================== */
+
+.dashboard-card {
+  background: #ffffff;
+
+  border-radius: 25px;
+
+  padding: 32px;
+
+  box-shadow:
+    0 10px 30px rgba(20, 45, 90, 0.08);
+
+  min-width: 0;
+}
+
+
+/* =====================================================
+   CARD HEADER
+===================================================== */
+
+.dashboard-card-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-bottom: 32px;
+
+  min-height: 72px;
+}
+
+.header-icon {
+  width: 64px;
+  height: 64px;
+
+  border-radius: 18px;
+
+  background: #eaf2ff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+
+  flex-shrink: 0;
+}
+
+.header-text {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.header-text h2 {
+  margin: 0;
+
+  font-size: 30px;
+
+  line-height: 1.15;
+
+  color: #08194b;
+}
+
+.header-text p {
+  margin: 7px 0 0;
+
+  font-size: 17px;
+
+  color: #617096;
+
+  line-height: 1.35;
+}
+
+.count-badge,
+.match-header-badge {
+  padding: 14px 22px;
+
+  border-radius: 30px;
+
+  background: #edf4ff;
+
+  color: #1261db;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  flex-shrink: 0;
+}
+
+.match-header-badge {
+  background: #e4f8eb;
+
+  color: #07863f;
+}
+
+
+/* =====================================================
+   MY SKILLS
+===================================================== */
+
+.skill-cards {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.skill-item {
+  min-height: 92px;
+
+  border: 1px solid #c8ddff;
+
+  background: #f2f6ff;
+
+  border-radius: 18px;
+
+  padding: 18px 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(20, 45, 90, 0.08);
+}
+
+.skill-item-left {
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  font-size: 23px;
+
+  color: #1163d8;
+}
+
+.skill-symbol {
+  font-size: 30px;
+
+  width: 38px;
+
+  text-align: center;
+}
+
+.skill-name {
+  font-weight: 500;
+}
+
+.skill-check {
+  width: 30px;
+  height: 30px;
+
+  background: #55ca91;
+
+  color: white;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+
+  flex-shrink: 0;
+}
+
+
+/* =====================================================
+   SKILL STRENGTH
+===================================================== */
+
+.skill-strength {
+  margin-top: 48px;
+}
+
+.skill-strength h3 {
+  font-size: 27px;
+
+  margin: 0 0 14px;
+
+  text-align: center;
+}
+
+.strength-value {
+  text-align: center;
+
+  font-size: 20px;
+
+  color: #617096;
+
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 22px;
+
+  width: 100%;
+
+  background: #e4ebf5;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+
+  background: #1769e0;
+
+  border-radius: 20px;
+
+  transition: width 0.6s ease;
+}
+
+
+/* =====================================================
+   SKILL AREAS
+===================================================== */
+
+.skill-areas {
+  margin-top: 48px;
+}
+
+.skill-areas h3 {
+  font-size: 27px;
+
+  margin: 0 0 20px;
+
+  text-align: center;
+}
+
+.area-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: flex-start;
+
+  gap: 14px;
+}
+
+.area-list span {
+  background: #edf4ff;
+
+  color: #1261db;
+
+  padding: 14px 22px;
+
+  border-radius: 15px;
+
+  font-size: 17px;
+}
+
+
+/* =====================================================
+   JOB HIGHLIGHT
+===================================================== */
+
+.job-highlight {
+  min-height: 120px;
+
+  background: #edf4ff;
+
+  border: 1px solid #c8ddff;
+
+  border-radius: 20px;
+
+  padding: 20px 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 22px;
+}
+
+.job-icon {
+  width: 62px;
+  height: 62px;
+
+  border-radius: 16px;
+
+  background: white;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+
+  flex-shrink: 0;
+}
+
+.job-details {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.job-details h3 {
+  margin: 0;
+
+  font-size: 28px;
+
+  color: #08194b;
+}
+
+.job-details p {
+  margin: 7px 0 0;
+
+  font-size: 17px;
+
+  color: #617096;
+}
+
+.job-match {
+  font-size: 22px;
+
+  font-weight: 700;
+
+  color: #07863f;
+
+  white-space: nowrap;
+}
+
+
+/* =====================================================
+   REQUIRED SKILLS
+===================================================== */
+
+.required-section {
+  margin-top: 32px;
+}
+
+.required-section h3 {
+  font-size: 24px;
+
+  margin: 0 0 20px;
+
+  text-align: center;
+}
+
+.required-skills {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 14px;
+}
+
+.required-skill {
+  padding: 14px 20px;
+
+  border-radius: 15px;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.required-skill:hover {
+  transform: translateY(-2px);
+}
+
+.required-skill.matched {
+  background: #e2f7eb;
+
+  color: #07863f;
+}
+
+.required-skill.missing {
+  background: #fff0d8;
+
+  color: #b76500;
+}
+
+
+/* =====================================================
+   MATCH STATS
+===================================================== */
+
+.match-stats {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+
+  margin-top: 32px;
+}
+
+.match-stat {
+  min-height: 105px;
+
+  border-radius: 18px;
+
+  padding: 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+}
+
+.matched-stat {
+  background: #e4f8eb;
+}
+
+.missing-stat {
+  background: #fff0d8;
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+
+  flex-shrink: 0;
+}
+
+.matched-stat .stat-icon {
+  color: #0b9b4d;
+}
+
+.missing-stat .stat-icon {
+  background: #ffad16;
+
+  color: white;
+}
+
+.stat-content strong {
+  display: block;
+
+  font-size: 27px;
+}
+
+.stat-content span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #617096;
+}
+
+
+/* =====================================================
+   RECOMMENDATION
+===================================================== */
+
+.recommendation-box {
+  margin-top: 30px;
+
+  min-height: 95px;
+
+  background: #edf4ff;
+
+  border-radius: 18px;
+
+  padding: 18px 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.recommendation-box:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(20, 45, 90, 0.08);
+}
+
+.recommendation-icon {
+  font-size: 32px;
+
+  flex-shrink: 0;
+}
+
+.recommendation-content {
+  flex: 1;
+}
+
+.recommendation-box strong {
+  font-size: 20px;
+}
+
+.recommendation-box p {
+  margin: 5px 0 0;
+
+  font-size: 16px;
+
+  color: #173b80;
+}
+
+.recommendation-arrow {
+  margin-left: auto;
+
+  font-size: 32px;
+
+  color: #1769e0;
+}
+
+
+/* =====================================================
+   NO DATA
+===================================================== */
+
+.no-data {
+  text-align: center;
+
+  padding: 50px;
+
+  color: #617096;
+}
+
+
+/* =====================================================
+   LOADING STATE
+===================================================== */
+
+.loading-screen {
+  min-height: 100vh;
+
+  background: #f4f7fc;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 30px;
+}
+
+.loading-spinner {
+  width: 55px;
+  height: 55px;
+
+  border: 5px solid #dce8fb;
+
+  border-top: 5px solid #1769e0;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+
+  margin-bottom: 22px;
+}
+
+.loading-screen h2 {
+  margin: 0;
+
+  font-size: 28px;
+
+  color: #08194b;
+}
+
+.loading-screen p {
+  margin-top: 10px;
+
+  color: #617096;
+
+  font-size: 17px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =====================================================
+   CONNECTION ERROR
+===================================================== */
+
+.connection-error {
+  min-height: 100vh;
+
+  background: #f4f7fc;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 30px;
+}
+
+.error-icon {
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+
+  background: #fff0d8;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 38px;
+
+  margin-bottom: 20px;
+}
+
+.connection-error h2 {
+  margin: 0;
+
+  font-size: 30px;
+
+  color: #08194b;
+}
+
+.connection-error p {
+  max-width: 520px;
+
+  margin: 15px 0 25px;
+
+  line-height: 1.6;
+
+  color: #617096;
+
+  font-size: 17px;
+}
+
+.connection-error button {
+  border: none;
+
+  background: #1769e0;
+
+  color: white;
+
+  padding: 13px 28px;
+
+  border-radius: 12px;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.connection-error button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(20, 45, 90, 0.15);
+}
+
+
+/* =====================================================
+   RESPONSIVE - TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  .career-goal {
+    min-width: 400px;
+  }
+
+  .dashboard-card {
+    padding: 26px;
+  }
+
+  .header-text h2 {
+    font-size: 26px;
+  }
+
+  .header-text p {
+    font-size: 15px;
+  }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - SMALL TABLET
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .main-header {
+    padding: 20px 25px;
+  }
+
+  .brand-text h1 {
+    font-size: 34px;
+  }
+
+  .brand-text p {
+    font-size: 16px;
+  }
+
+  .connection-status {
+    display: none;
+  }
+
+  .profile-card {
+    margin: 24px;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    align-items: stretch;
+  }
+
+  .career-goal {
+    min-width: 0;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+
+    margin: 0 24px 30px;
+  }
+
+}
+
+
+/* =====================================================
+   RESPONSIVE - MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .main-header {
+    padding: 18px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-text h1 {
+    font-size: 28px;
+  }
+
+  .brand-text p {
+    font-size: 14px;
+  }
+
+  .profile-card {
+    margin: 18px;
+
+    padding: 22px;
+  }
+
+  .profile-left {
+    gap: 18px;
+  }
+
+  .profile-avatar {
+    width: 72px;
+    height: 72px;
+
+    font-size: 35px;
+  }
+
+  .profile-info h2 {
+    font-size: 25px;
+  }
+
+  .profile-info p {
+    font-size: 16px;
+  }
+
+  .career-goal {
+    padding: 18px;
+  }
+
+  .career-goal strong {
+    font-size: 18px;
+  }
+
+  .dashboard-grid {
+    margin: 0 18px 25px;
+
+    gap: 20px;
+  }
+
+  .dashboard-card {
+    padding: 22px;
+
+    border-radius: 20px;
+  }
+
+  .dashboard-card-header {
+    gap: 12px;
+
+    flex-wrap: wrap;
+  }
+
+  .header-icon {
+    width: 52px;
+    height: 52px;
+
+    font-size: 25px;
+  }
+
+  .header-text {
+    min-width: 150px;
+  }
+
+  .header-text h2 {
+    font-size: 22px;
+  }
+
+  .header-text p {
+    font-size: 14px;
+  }
+
+  .count-badge,
+  .match-header-badge {
+    padding: 10px 14px;
+
+    font-size: 14px;
+  }
+
+  .skill-item {
+    min-height: 75px;
+
+    padding: 15px;
+  }
+
+  .skill-item-left {
+    font-size: 19px;
+  }
+
+  .skill-symbol {
+    font-size: 25px;
+  }
+
+  .match-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .job-highlight {
+    padding: 16px;
+  }
+
+  .job-details h3 {
+    font-size: 22px;
+  }
+
+  .job-match {
+    font-size: 18px;
+  }
+
+  .recommendation-box {
+    padding: 16px;
+  }
+
+  .recommendation-box p {
+    font-size: 14px;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 400px) {
+
+  .brand-text h1 {
+    font-size: 24px;
+  }
+
+  .brand-text p {
+    font-size: 12px;
+  }
+
+  .profile-info h2 {
+    font-size: 21px;
+  }
+
+  .profile-info p {
+    font-size: 14px;
+  }
+
+  .job-highlight {
+    flex-wrap: wrap;
+  }
+
+  .job-match {
+    width: 100%;
+    margin-left: 84px;
+  }
+
+  .required-skill {
+    font-size: 14px;
+
+    padding: 11px 14px;
+  }
+
+}
